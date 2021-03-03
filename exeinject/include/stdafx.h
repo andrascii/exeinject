@@ -28,6 +28,9 @@
 #include <csignal>
 #include <optional>
 #include <iostream>
+#include <fstream>
+#include <filesystem>
+#include <variant>
 
 //
 // Boost
@@ -39,6 +42,13 @@
 #include <boost/program_options/variables_map.hpp>
 #include <boost/program_options/parsers.hpp>
 #include <boost/program_options/positional_options.hpp>
+
+//
+// Windows
+//
+#ifdef _WIN32
+  #include <apiquery2.h>
+#endif
 
 using namespace std::chrono_literals;
 using namespace std::string_literals;

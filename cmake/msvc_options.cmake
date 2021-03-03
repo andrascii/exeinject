@@ -8,9 +8,10 @@ if (MSVC)
     /EHsc
     /MP
     /permissive-
-    /std:c++20
     /Zi
     /W4
     /WX
   )
+  
+  add_definitions("-D_AMD64_")
 endif()

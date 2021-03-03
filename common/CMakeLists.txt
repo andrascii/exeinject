@@ -12,6 +12,11 @@ set(SOURCES_DIR src)
 set(INCLUDES_DIR include)
 
 #
+# deps
+#
+list(APPEND DEPS ${Boost_LIBRARIES})
+
+#
 # precompiled header
 #
 set(PRECOMPILED_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/include/stdafx.h")
@@ -42,6 +47,11 @@ include_directories(${Boost_INCLUDE_DIRS})
 # adding precompiled header
 #
 target_precompile_headers(${THIS_TARGET_NAME} PRIVATE ${PRECOMPILED_HEADER})
+
+#
+# linking this target with other targets
+#
+target_link_libraries(${THIS_TARGET_NAME} PRIVATE ${DEPS})
 
 #
 # creating sanitized version of this target to check UB
