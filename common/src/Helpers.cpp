@@ -45,4 +45,12 @@ auto Helpers::SetCurrentThreadName(const std::string& name) noexcept -> void {
 #endif
 }
 
+auto Helpers::FromUtcMs(uint64_t utc) noexcept -> TimePoint<Clock, Ms> {
+  return TimePoint<Clock, Ms>{ Ms{ utc } };
+}
+
+auto Helpers::FromUtcSec(uint64_t utc) noexcept -> TimePoint<Clock, Seconds> {
+  return TimePoint<Clock, Seconds>{ Seconds{ utc } };
+}
+
 }

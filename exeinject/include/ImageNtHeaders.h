@@ -22,7 +22,7 @@ auto TakeOptionalHeaderInfo(const ImageOptionalHeader& optional_header, C&& func
 struct ImageNtHeaders {
   std::uint32_t signature;
   ImageFileHeader image_file_header;
-  std::variant<ImageOptionalHeader32, ImageOptionalHeader64> image_optional_header;
+  ImageOptionalHeader image_optional_header;
 };
 
 }
