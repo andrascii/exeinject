@@ -16,7 +16,7 @@ auto PeParser::Parse(const std::filesystem::path& path) const -> Info {
 
   std::stringstream pe_data;
 
-  std::copy(
+  copy(
     std::istreambuf_iterator<char>(file),
     std::istreambuf_iterator<char>(),
     std::ostreambuf_iterator<char>(pe_data)

@@ -19,10 +19,10 @@ inline auto operator<<(std::ostream& out, const ImageFileHeader& header) noexcep
   const auto time_breakdown = std::chrono::system_clock::to_time_t(timestamp);
 
   out
-    << "\t\tMachine: " << header.machine << std::endl
+    << "\t\tMachine: " << std::hex << std::showbase << header.machine << std::endl
     << "\t\tNumber of Sections: " << header.number_of_sections << std::endl
     << "\t\tTime Date Stamp: " << std::put_time(std::localtime(&time_breakdown), "%F %T") << std::endl
-    << "\t\tPointer to Symbol Table: " << header.pointer_to_symbol_table << std::endl
+    << "\t\tPointer to Symbol Table: " << std::hex << std::showbase << header.pointer_to_symbol_table << std::endl
     << "\t\tNumber of Symbols: " << header.number_of_symbols << std::endl
     << "\t\tSize of Optional Header: " << header.size_of_optional_header << std::endl
     << "\t\tCharacteristics: " << header.characteristics << std::endl;

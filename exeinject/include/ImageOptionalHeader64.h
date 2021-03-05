@@ -45,9 +45,9 @@ inline auto operator<<(std::ostream& out, const ImageOptionalHeader64& header) n
     << "\t\tSize of Code: " << header.size_of_code << std::endl
     << "\t\tSize of Initialized Data: " << header.size_of_initialized_data << std::endl
     << "\t\tSize of Uninitialized Data: " << header.size_of_uninitialized_data << std::endl
-    << "\t\tAddress of Entry Point: " << header.address_of_entry_point << std::endl
-    << "\t\tBase of Code: " << header.base_of_code << std::endl
-    << "\t\tImage Base: " << header.image_base << std::endl
+    << "\t\tAddress of Entry Point: " << std::hex << std::showbase << header.address_of_entry_point << std::endl
+    << "\t\tBase of Code: " << std::hex << std::showbase << header.base_of_code << std::endl
+    << "\t\tImage Base: " << std::hex << std::showbase << header.image_base << std::endl
     << "\t\tSection Alignment: " << header.section_alignment << std::endl
     << "\t\tFile Alignment: " << header.file_alignment << std::endl
     << "\t\tMajor OS Version: " << header.major_operating_system_version << std::endl

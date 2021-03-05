@@ -27,11 +27,11 @@ using Sections = std::vector<ImageSectionHeader>;
 inline auto operator<<(std::ostream& out, const ImageSectionHeader& section) noexcept -> std::ostream& {
   out
     << "\t" << section.name << std::endl
-    << "\t\tVirtual Address: " << section.virtual_address << std::endl
+    << "\t\tVirtual Address: " << std::hex << std::showbase << section.virtual_address << std::endl
     << "\t\tSize of Raw Data: " << section.size_of_raw_data << std::endl
-    << "\t\tPointer to Raw Data: " << section.pointer_to_raw_data << std::endl
-    << "\t\tPointer to Relocations: " << section.pointer_to_relocations << std::endl
-    << "\t\tPointer to Line Numbers: " << section.pointer_to_line_numbers << std::endl
+    << "\t\tPointer to Raw Data: " << std::hex << std::showbase << section.pointer_to_raw_data << std::endl
+    << "\t\tPointer to Relocations: " << std::hex << std::showbase << section.pointer_to_relocations << std::endl
+    << "\t\tPointer to Line Numbers: " << std::hex << std::showbase << section.pointer_to_line_numbers << std::endl
     << "\t\tNumber of Relocations: " << section.number_of_relocations << std::endl
     << "\t\tNumber of Line Numbers: " << section.number_of_line_numbers << std::endl
     << "\t\tCharacteristics: " << section.characteristics << std::endl;
